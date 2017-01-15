@@ -4,3 +4,10 @@
 <p>Customer Address : <%= @customer.cust_Add %></p>
 <p>Customer Mobile  : <%= @customer.cust_mobile %></p>
 <p>Customer Email   : <%= @customer.cust_email %></p>
+
+
+<ul class="nav nav-pills">
+  <li role="presentation" class="active"><%= link_to 'Create New User', new_customer_path%></li>
+  <li role="presentation" class="active"><%= link_to 'Create New Vehcile', new_vehicle_path%></li>
+  <li role="presentation" class="active"><a href="#">Messages</a></li>
+</ul>
