@@ -1,0 +1,42 @@
+<div class="center jumbotron">
+
+<h1 align='center'>Login Page</h1>
+
+<div class='row'>
+	<div class='col-xs-12'>
+<%= form_tag('/', method: :post, class: 'form-horizontal') do %>
+        <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= label_tag(:user_name , "User Name") %>
+          </div>
+          
+          <div class="col-sm-6">
+            <%= text_field_tag :user_name, "" ,class: 'form-control', placeholder: 'User Name', autofocus: true %>
+          </div>
+        </div>  
+
+          <div class="form-group">
+          <div class="control-label col-sm-2">
+            <%= label_tag(:password , "Password") %>
+          </div>
+          <div class="col-sm-6">
+              <%= password_field_tag :password , "" ,class: 'form-control' %>
+          </div>
+        </div>  
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+        <%= submit_tag("Login",class: "btn btn-primary btn-lg btn-center") %>
+        </div>
+    </div>
+
+<% end %>
+
+
+[<%= link_to 'ABOUT', about_path %>]
+
+</div>
+
+
+</div>
+</div>
+
