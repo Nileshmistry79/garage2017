@@ -11,13 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170114185209) do
+ActiveRecord::Schema.define(version: 20170116033021) do
 
   create_table "customers", force: :cascade do |t|
     t.text     "cust_Name"
     t.text     "cust_Add"
     t.text     "cust_mobile"
     t.text     "cust_email"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "jobcards", force: :cascade do |t|
+    t.text     "init_problems"
+    t.integer  "estimated_cost"
+    t.integer  "actual_cost"
+    t.text     "techq_name"
+    t.datetime "date_arrival"
+    t.datetime "date_delivery"
+    t.integer  "vehicle_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -11,8 +11,11 @@ post '/' , to: 'welcome#login'
 
 get  'about', to: 'welcome#about'
 
+get 'seach_customer', to: 'jobcards#search'
+
 resources :customers
 resources :vehicles
+resources :jobcards
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
