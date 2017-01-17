@@ -1,4 +1,7 @@
 <h1 align='center'>New Job Card</h1>
+
+<div id="jobcard_controller">
+
 <% if @jobcard.errors.any? %>
 	<ul> 
 		<% @jobcard.errors.full_messages.each do |msg| %>
@@ -17,15 +20,21 @@
 
 <%= f.label :vehicle_id , "Vehicle Number" %>
 </div>
-<div class="col-sm-10">
+<div class="col-sm-4">
 
 <%= f.select(:vehicle_id, @all_vehicle.collect {|u| [u.vehicle_no, u.id]}, :prompt => '--Select--', :class => "form-control"  ) %>
 
 </div>
+
+<div class="col-sm-2" id="jobcard_controller_RES">
+<%= render 'jobcards/lookup' %>  
 </div>
 
 
-		<%= render partial: 'lookup' %>
+</div>
+
+
+		
 
 
 
@@ -71,4 +80,6 @@
 
 <% end %>
 </div>
+</div>
+
 </div>

@@ -11,8 +11,8 @@ def search
       @vehicle_cust=Jobcard.new_from_lookup(params[:id])
   if @vehicle_cust
       #render json: @vehicle_cust
-      puts 'dfdfd'
-      render 'new'
+      ##==>WORS==>render partial 'lookup'
+     render partial: 'lookup', formats: :html
   end  
   
   end
