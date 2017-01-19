@@ -20,13 +20,14 @@
 
 <%= f.label :vehicle_id , "Vehicle Number" %>
 </div>
-<div class="col-sm-4">
+<div class="col-sm-2">
 
 <%= f.select(:vehicle_id, @all_vehicle.collect {|u| [u.vehicle_no, u.id]}, :prompt => '--Select--', :class => "form-control"  ) %>
 
 </div>
 
-<div class="col-sm-2" id="jobcard_controller_RES">
+<div class="col-sm-6" id="jobcard_controller_RES">
+<%= render 'common/spinner' %> 	
 <%= render 'jobcards/lookup' %>  
 </div>
 
