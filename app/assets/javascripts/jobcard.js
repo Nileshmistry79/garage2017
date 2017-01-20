@@ -8,7 +8,12 @@ init_stock_lookup = function(){
 
 $('#jobcard_vehicle_id').on('change', function(event) {
 var selected_resource_id = $(this).val();
-console.log("even fire");
+
+if (selected_resource_id.length==0){
+	selected_resource_id=0;
+	console.log("X0");
+}
+
   $.ajax({
     url: "/seach_customer",
     type: "get",
@@ -16,18 +21,22 @@ console.log("even fire");
           success: function(data){
           $('#jobcard_controller_RESULT').replaceWith(data);
            init_stock_lookup();
+		   	console.log("step Success");
+	
           },
           error: function(data){
-          $('#jobcard_controller_RESULT').replaceWith(data);
+          $('#jobcard_controller_RESULT').replaceWith('');
+          console.log("error");
           hide_spinner();
           },
           beforeSend: function(data){
           	show_spinner();
+		   	console.log("step spinner");
+
           },
           complete: function(data){
           	hide_spinner();
           }
   });
 });
-
 };
