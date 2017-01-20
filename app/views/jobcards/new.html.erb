@@ -2,14 +2,7 @@
 
 <div id="jobcard_controller">
 
-<% if @jobcard.errors.any? %>
-	<ul> 
-		<% @jobcard.errors.full_messages.each do |msg| %>
-     		<li> <%= msg %> </li>
-		<% end %>
-	</ul>
-<% end %>
-
+<%= render 'common/errors', obj:@jobcard%>
 
 <div class='row'>
 	<div class='col-xs-12'>
