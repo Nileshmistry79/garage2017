@@ -4,18 +4,24 @@
 		<div class="col-xs-8 col-xs-offset-2">
 		<div class="well well-lg">
 			<div class="customer-title">
-				<%= link_to customer.cust_Name, customer_path(customer) %>
+				<div class="col-md-3">Customer Name</div> <%= link_to customer.cust_Name, customer_path(customer) %>
 			</div>
 			<div class="customer-body">
-					<%= truncate(customer.cust_Add, length: 100) %>
+				<div class="col-md-3">Customer Address</div> 	<%= truncate(customer.cust_Add, length: 100) %>
 			</div>
 			<div class="customer-body">
-					<%= customer.cust_mobile %>
+				<div class="col-md-3">Mobile Number</div> 	<%= customer.cust_mobile %>
 			</div>
 			
 			<div class="customer-body">
-					<%= customer.cust_email %>
-			</div>			
+				<div class="col-md-3">Email id:</div> 	<%= customer.cust_email %>
+			</div>		
+			
+			<div class="customer-body">
+				<div class="col-md-3">Total Number of Vehicles:</div> 	<%= Vehicle.count(:condition => "Vehicle.find(customer)") %>
+			</div>		
+			
+				
 <div class="customer-actions">
 <%= link_to "Edit this customer", edit_customer_path(customer), class: "btn btn-xs btn-primary" %>
 
