@@ -1,6 +1,6 @@
 class Jobcard < ActiveRecord::Base
   belongs_to :vehicle
-  
+  validates :estimated_cost, :vehicle_id, :init_problems, :date_arrival, presence: true  
 
 
 
