@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).on('turbolinks:load', function() {
 
 init_stock_lookup();
 
@@ -8,6 +8,7 @@ init_stock_lookup = function(){
 
 $('#jobcard_vehicle_id').on('change', function(event) {
 var selected_resource_id = $(this).val();
+console.log("even fire");
   $.ajax({
     url: "/seach_customer",
     type: "get",
@@ -19,7 +20,6 @@ var selected_resource_id = $(this).val();
           error: function(data){
           $('#jobcard_controller_RESULT').replaceWith(data);
           hide_spinner();
-           init_stock_lookup();
           },
           beforeSend: function(data){
           	show_spinner();
@@ -27,7 +27,7 @@ var selected_resource_id = $(this).val();
           complete: function(data){
           	hide_spinner();
           }
-  })
+  });
 });
 
 };
