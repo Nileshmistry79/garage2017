@@ -14,6 +14,11 @@ def search
  
 end  
 
+  def show
+    @jobcard=Jobcard.find(params[:id])
+  end
+  
+
 
 def create
   #render plain: params[:jobcard].inspect

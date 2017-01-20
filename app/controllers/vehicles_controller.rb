@@ -1,24 +1,23 @@
 class VehiclesController <ApplicationController
 before_action :set_vehicle, only: [:edit, :update, :show, :destroy] 
-
 before_action :set_all_vehicle, only: [:new,:create]   
 
 def new
-      
-     
 end 
 
 def edit
-
 end
 
 def update
-
 end
 
 def destroy
-  
 end  
+
+def myindex
+  @vehicle_all=Vehicle.where(customer_id:params[:id])
+  @my_customer=Customer.find(params[:id])
+end
 
 
   def create

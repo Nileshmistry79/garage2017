@@ -12,6 +12,7 @@ post '/' , to: 'welcome#login'
 get  'about', to: 'welcome#about'
 
 get 'seach_customer', to: 'jobcards#search'
+get '/myindex/:id', to: 'vehicles#myindex', as: 'myindex'
 
 resources :customers
 resources :vehicles

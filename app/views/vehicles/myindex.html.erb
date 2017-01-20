@@ -1,0 +1,20 @@
+<h1 align="center">Listing all Vehicle Details of <%= @my_customer.cust_Name %></h1>
+	<% @vehicle_all.each do |vehicle| %>
+	<div class="row">
+		<div class="col-xs-8 col-xs-offset-2">
+		<div class="well well-lg">
+			<div class="vehicle-title">
+				<div class="col-md-3">Vehicle Number</div> <%= link_to vehicle.vehicle_no, vehicle_path(vehicle) %>
+			</div>
+			
+				
+<div class="vehicle-actions">
+<% link_to "Edit this vehicle", edit_vehicle_path(vehicle), class: "btn btn-xs btn-primary" %>
+</div>
+</div>
+
+</div>
+
+</div>
+
+<% end %>
