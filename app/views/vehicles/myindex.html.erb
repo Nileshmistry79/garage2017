@@ -9,7 +9,7 @@
 
 			<div class="vehicle-title">
 				<% if Jobcard.where(Vehicle_id:vehicle).last %>
-				<div class="col-md-3">Last Job Card</div> <%= link_to Jobcard.where(Vehicle_id:vehicle).last.id, jobcard_path(Jobcard.where(Vehicle_id:vehicle).last) %>
+				<div class="col-md-3">Last Job Card</div> <%= link_to Jobcard.where(vehicle_id:vehicle).last.id, jobcard_path(Jobcard.where(vehicle_id:vehicle).last) %>
 				<% else %>
 				<div class="col-md-3">No Pending Job Card</div> 
 				<% end %>
