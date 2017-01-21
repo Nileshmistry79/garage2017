@@ -1,13 +1,8 @@
 <h1>Showing Selected Jobcard</h1>
 
 <p>Job Card  Number    : <%= @jobcard.id %></p>
-<p>Vehicle Number      : <%= @jobcard.vehicle_id %>  </p>
+<p>Vehicle Number      : <%= Vehicle.find(@jobcard.vehicle_id).vehicle_no %>  </p>
 <p>Estimation          : <%= @jobcard.estimated_cost %>  </p>
+<p>Date of Arrival     : <%= @jobcard.date_arrival.strftime('%d %B %Y') %>  </p>
 
-
-<ul class="nav nav-pills">
-  <li role="presentation" class="active"><%= link_to 'Create New User', new_customer_path%></li>
-  <li role="presentation" class="active"><%= link_to 'Create New Vehcile', new_vehicle_path%></li>
-  <li role="presentation" class="active"><%= link_to 'New Jobcard', new_jobcard_path%></li>
-</ul>
-
+<%= render 'common/nav' %>
