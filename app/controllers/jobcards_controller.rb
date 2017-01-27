@@ -25,10 +25,10 @@ def create
   @jobcard=Jobcard.new(jobcard_parmas)
     if @jobcard.save
       flash[:notice]= "New Jobcard Saved"
-      redirect_to jobcard_path(@jobcard)  
+      redirect_to jobcard_path(@jobcard)
     else
       render 'new'
-    end  
+   end
 
 end
 

@@ -19,13 +19,73 @@
 
 </div>
 
-<div class="col-sm-6" id="jobcard_controller_RES">
+<div class="col-sm-8" id="jobcard_controller_RES">
 <%= render 'common/spinner' %> 	
 <%= render 'jobcards/lookup' %>  
 </div>
 
 
 </div>
+
+<hr/>
+
+	<div class="form-group">
+		<div class="control-label col-sm-2">
+		<%= f.label :list_of_problems,  "List of Problems" %>
+		</div>	
+	
+		<div class="container col-sm-10 myborder1">
+	
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :clutch_cabel %>
+      		<%= f.label :clutch_cabel, "Clutch Cabel" %>
+		</div>
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :accelrator_cabel %>
+      		<%= f.label :accelrator_cabel, "Accelrator Cabel" %>
+		</div>      		      		
+      		
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :choke_cabel %>
+      		<%= f.label :choke_cabel, "Choke Cabel" %>
+		</div>      		      		
+      	
+      	
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :break_liner_cabel %>
+      		<%= f.label :break_liner_cabel, "Break Liner Cabel" %>
+		</div>      		      		
+      	
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :break_pads %>
+      		<%= f.label :break_pads, "Break Pads" %>
+		</div>      		      		
+
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :piston %>
+      		<%= f.label :piston, "Piston" %>
+		</div>      		      		
+
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :valves_set %>
+      		<%= f.label :valves_set, "Valves Set" %>
+		</div>      		      		
+
+		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :sterring_cone_set %>
+      		<%= f.label :sterring_cone_set, "Sterring Cone Set" %>
+		</div>      		      		
+
+   		<div class="checkbox-inline col-sm-2 myborder">
+      		<%= f.check_box :paid_service %>
+      		<%= f.label :paid_service, "Paid  Service" %>
+		</div>    		
+	    </div>
+	</div>
+	</div>
+
+
+
 
 
 		
@@ -61,6 +121,8 @@
 <%= f.date_field :date_arrival, class: "form-control", autofocus: true%>
 </div>
 </div>
+
+
 
 
 

@@ -1,7 +1,5 @@
 $(document).on('turbolinks:load', function() {
-
 init_stock_lookup();
-
 });
 
 init_stock_lookup = function(){
@@ -20,10 +18,7 @@ if (selected_resource_id.length==0){
     data: 'id=' + selected_resource_id,
           success: function(data){
           $('#jobcard_controller_RESULT').replaceWith(data);
-           init_stock_lookup();
-		   	console.log("step Success");
-	
-          },
+	      },
           error: function(data){
           $('#jobcard_controller_RESULT').replaceWith('');
           console.log("error");

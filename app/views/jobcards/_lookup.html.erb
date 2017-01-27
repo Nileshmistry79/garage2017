@@ -1,8 +1,10 @@
 <div id="jobcard_controller_RESULT">
 <% if @vehicle_cust %>
-<div id="stock-lookup-results" class="well results-block">
-<strong>Name:</strong> <%= @vehicle_cust.cust_Name %>
-<strong>Mobile No:</strong> <%= @vehicle_cust.cust_mobile %>
+<div class="col-sm-4">
+	<strong>Name:</strong> <%= @vehicle_cust.cust_Name %>
+</div>
+<div class="col-sm-4">
+	<strong>Mobile No:</strong> <%= @vehicle_cust.cust_mobile %>
 </div>
 <% end %>
 </div>

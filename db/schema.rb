@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170116033021) do
+ActiveRecord::Schema.define(version: 20170123073546) do
 
   create_table "customers", force: :cascade do |t|
     t.text     "cust_Name"
@@ -32,6 +32,15 @@ ActiveRecord::Schema.define(version: 20170116033021) do
     t.integer  "vehicle_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "clutch_cabel",      default: false, null: false
+    t.boolean  "accelrator_cabel",  default: false, null: false
+    t.boolean  "choke_cabel",       default: false, null: false
+    t.boolean  "break_liner_cabel", default: false, null: false
+    t.boolean  "break_pads",        default: false, null: false
+    t.boolean  "piston",            default: false, null: false
+    t.boolean  "valves_set",        default: false, null: false
+    t.boolean  "sterring_cone_set", default: false, null: false
+    t.boolean  "paid_service",      default: false, null: false
   end
 
   create_table "vehicles", force: :cascade do |t|
