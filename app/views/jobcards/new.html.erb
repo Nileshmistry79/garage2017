@@ -2,140 +2,120 @@
 
 <div id="jobcard_controller">
 
-<%= render 'common/errors', obj:@jobcard%>
+	<%= render 'common/errors', obj:@jobcard%>
 
-<div class='row'>
-	<div class='col-xs-12'>
-<%= form_for(@jobcard, :html => {class: "form-horizontal", role: "form"})  do |f| %>
-
-	<div class="form-group">
-	<div class="control-label col-sm-2">
-
-<%= f.label :vehicle_id , "Vehicle Number" %>
-</div>
-<div class="col-sm-2">
-
-<%= f.select(:vehicle_id, @all_vehicle.collect {|u| [u.vehicle_no, u.id]}, :prompt => '--Select--', :class => "form-control"  ) %>
-
-</div>
-
-<div class="col-sm-8" id="jobcard_controller_RES">
-<%= render 'common/spinner' %> 	
-<%= render 'jobcards/lookup' %>  
-</div>
-
-
-</div>
-
-<hr/>
-
-	<div class="form-group">
-		<div class="control-label col-sm-2">
-		<%= f.label :list_of_problems,  "List of Problems" %>
-		</div>	
-	
-		<div class="container col-sm-10 myborder1">
-	
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :clutch_cabel %>
-      		<%= f.label :clutch_cabel, "Clutch Cabel" %>
-		</div>
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :accelrator_cabel %>
-      		<%= f.label :accelrator_cabel, "Accelrator Cabel" %>
-		</div>      		      		
-      		
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :choke_cabel %>
-      		<%= f.label :choke_cabel, "Choke Cabel" %>
-		</div>      		      		
-      	
-      	
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :break_liner_cabel %>
-      		<%= f.label :break_liner_cabel, "Break Liner Cabel" %>
-		</div>      		      		
-      	
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :break_pads %>
-      		<%= f.label :break_pads, "Break Pads" %>
-		</div>      		      		
-
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :piston %>
-      		<%= f.label :piston, "Piston" %>
-		</div>      		      		
-
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :valves_set %>
-      		<%= f.label :valves_set, "Valves Set" %>
-		</div>      		      		
-
-		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :sterring_cone_set %>
-      		<%= f.label :sterring_cone_set, "Sterring Cone Set" %>
-		</div>      		      		
-
-   		<div class="checkbox-inline col-sm-2 myborder">
-      		<%= f.check_box :paid_service %>
-      		<%= f.label :paid_service, "Paid  Service" %>
-		</div>    		
-	    </div>
-	</div>
-	</div>
-
-
-
-
-
-		
-
-
-
-
-	<div class="form-group">
-		<div class="control-label col-sm-2">
-        <%= f.label :init_problems, "Details Problem" %>
-  </div>
-	 <div class="col-sm-8">
-    <%= f.text_area :init_problems, class: "form-control", placeholder: "Detailed Problem", autofocus: true %>
-</div>
-</div>
-	<div class="form-group">
-	<div class="control-label col-sm-2">
-
-<%= f.label :estimated_cost,  "Estimated Price" %>
-</div>
-<div class="col-sm-2">
-<%= f.number_field :estimated_cost, class: "form-control", placeholder: "0", autofocus: true%>
-</div>
-</div>
-
-
-	<div class="form-group">
-	<div class="control-label col-sm-2">
-
-<%= f.label :date_arrival,  "Date of Estimation" %>
-</div>
-<div class="col-sm-2">
-<%= f.date_field :date_arrival, class: "form-control", autofocus: true%>
-</div>
-</div>
-
-
-
-
-
+	<div class='row'>
+		<div class='col-xs-12'>
+			<%= form_for(@jobcard, :html => {class: "form-horizontal", role: "form"})  do |f| %>
 
 		<div class="form-group">
-		  <div class="col-sm-offset-2 col-sm-10">
-        <%= f.submit class: "btn btn-primary btn-lg" %>
-      </div>    
-  </div>
+				<div class="control-label col-sm-2">
 
+					<%= f.label :vehicle_id , "Vehicle Number" %>
+				</div>
+				<div class="col-sm-2">
 
-<% end %>
-</div>
+					<%= f.select(:vehicle_id, @all_vehicle.collect {|u| [u.vehicle_no, u.id]}, :prompt => '--Select--', :class => "form-control"  ) %>
+
+				</div>
+
+				<div class="col-sm-8" id="jobcard_controller_RES">
+					<%= render 'common/spinner' %>
+					<%= render 'jobcards/lookup' %>
+				</div>
+
+			</div>
+		<hr/>
+		<div class="form-group">
+				<div class="control-label col-sm-2">
+					<%= f.label :list_of_problems,  "List of Problems" %>
+				</div>
+
+				<div class="container col-sm-10 myborder1">
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :clutch_cabel %>
+						<%= f.label :clutch_cabel, "Clutch Cabel" %>
+					</div>
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :accelrator_cabel %>
+						<%= f.label :accelrator_cabel, "Accelrator Cabel" %>
+					</div>
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :choke_cabel %>
+						<%= f.label :choke_cabel, "Choke Cabel" %>
+					</div>
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :break_liner_cabel %>
+						<%= f.label :break_liner_cabel, "Break Liner Cabel" %>
+					</div>
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :break_pads %>
+						<%= f.label :break_pads, "Break Pads" %>
+					</div>
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :piston %>
+						<%= f.label :piston, "Piston" %>
+					</div>
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :valves_set %>
+						<%= f.label :valves_set, "Valves Set" %>
+					</div>
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :sterring_cone_set %>
+						<%= f.label :sterring_cone_set, "Sterring Cone Set" %>
+					</div>
+
+					<div class="checkbox-inline col-sm-2 myborder">
+						<%= f.check_box :paid_service %>
+						<%= f.label :paid_service, "Paid  Service" %>
+					</div>
+				</div>
+			</div>
+
+		<div class="form-group">
+			<div class="control-label col-sm-2">
+				<%= f.label :init_problems, "Details Problem" %>
+			</div>
+			<div class="col-sm-8">
+				<%= f.text_area :init_problems, class: "form-control", placeholder: "Detailed Problem", autofocus: true %>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="control-label col-sm-2">
+
+				<%= f.label :estimated_cost,  "Estimated Cost" %>
+			</div>
+			<div class="col-sm-2">
+				<%= f.number_field :estimated_cost, class: "form-control", placeholder: "0", autofocus: true%>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="control-label col-sm-2">
+
+				<%= f.label :date_delivery,  "Date of Delivery" %>
+			</div>
+			<div class="col-sm-2">
+				<%= f.date_field :date_delivery, class: "form-control"%>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<div class="col-sm-offset-2 col-sm-10">
+				<%= f.submit class: "btn btn-primary btn-lg" %>
+			</div>
+		</div>
+
+		<% end %>
+	</div>
 </div>
 
 </div>

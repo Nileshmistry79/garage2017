@@ -23,6 +23,7 @@ end
 def create
   #render plain: params[:jobcard].inspect
   @jobcard=Jobcard.new(jobcard_parmas)
+  @jobcard.date_arrival=Time.now()
     if @jobcard.save
       flash[:notice]= "New Jobcard Saved"
       redirect_to jobcard_path(@jobcard)
@@ -41,7 +42,7 @@ private
     end  
     
     def jobcard_parmas
-      params.require(:jobcard).permit(:estimated_cost, :vehicle_id, :init_problems,:date_arrival)
+      params.require(:jobcard).permit!
     end
   
 end  
