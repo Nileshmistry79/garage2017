@@ -1,4 +1,86 @@
-<h1>Showing Selected Jobcard</h1>
+<div class='row' >
+	<table border="1px" width="750px"><tr><td>
+		<h3> SHERRY AUTO</h3>
+		<div class="myaddress">" SEA BIRD" Shop No. 2, Opp St.Anthony's High School
+		<br/>Malad Mumbai - 400 005
+		<br/>Tel: 022 28805013 Mobile: 98193 99300
+		<br/>TIMUNGS: 10:00 A.M. TO 7:30 PM	SUNDAY CLOSED
+		</td>	
+	
+	<td colspan="2">
+		<h3><center> JOB CARD NO </center></H3>
+		<H3><center><b> <%= @jobcard.id %> </b></center></H3>	
+	</td>	
+</tr>
+
+<tr>
+	<td><strong>Registration Number :</strong> <%= Vehicle.find(@jobcard.vehicle_id).vehicle_no %></td> 
+	<td><strong>Date :</strong> <%= @jobcard.date_arrival.strftime('%d %B %Y') %></td> <td><strong>Time :</strong> <%= @jobcard.date_arrival.strftime('%I : %M %p') %></td>
+</tr>
+<tr>
+	<td><strong>Name:</strong> <%=  Customer.find(Vehicle.find(@jobcard.vehicle_id).customer_id).cust_Name %> </td>
+	<td colspan="2"><strong>Model:</strong> <%= Vehicle.find(@jobcard.vehicle_id).Model_name %> </td>
+</tr>
+
+<tr>
+	<td colspan="2"><strong>Address:</strong> <%=  Customer.find(Vehicle.find(@jobcard.vehicle_id).customer_id).cust_Add %> </td>
+	<td><strong>Mobile No : </strong><%=  Customer.find(Vehicle.find(@jobcard.vehicle_id).customer_id).cust_mobile %> </td>
+			
+</tr>	
+
+<tr>
+	<td colspan="3" align="center"><strong>List of Problems</strong></td>
+</tr>
+
+<tr>
+	<td><strong>Clutch Cabel</strong></td><td colspan="2"><center> <% if @jobcard.clutch_cabel %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+
+
+
+<tr>
+	<td><strong>Acclerator Cabel</strong></td><td colspan="2"><center> <% if @jobcard.accelrator_cabel %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+
+<tr>
+	<td><strong>Choke Cabel</strong></td><td colspan="2"><center> <% if @jobcard.choke_cabel %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+
+<tr>
+	<td><strong>Break Liner Cabel</strong></td><td colspan="2"><center> <% if @jobcard.break_liner_cabel %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+<tr>
+	<td><strong>Break Pads</strong></td><td colspan="2"><center> <% if @jobcard.break_pads %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+<tr>
+	<td><strong>Piston</strong></td><td colspan="2"><center> <% if @jobcard.piston %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+<tr>
+	<td><strong>Valves Set</strong></td ><td colspan="2"><center> <% if @jobcard.valves_set %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+<tr>
+	<td><strong>Sterring Cone Set</strong></td><td colspan="2"><center> <% if @jobcard.sterring_cone_set %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+<tr>
+	<td><strong>Paid Service</strong></td><td colspan="2"><center> <% if @jobcard.paid_service %> <i class="fa fa-check"></i><% else %> <i class="fa fa-close"></i> <% end %> </center></td>	
+</tr>	
+
+
+</table>
+
+
+</div>	
+
+
+<p id="pdf_link"><%= link_to "Download Invoice (PDF)", jobcard_path(@jobcard, :format => "pdf") %></p>
+
+
+
+
+<h1>Showing Selected Jobcard-: </p></h1>
+
+
+
 
 <p>Job Card  Number    : <%= @jobcard.id %></p>
 <p>Vehicle Number      : <%= Vehicle.find(@jobcard.vehicle_id).vehicle_no %>  </p>

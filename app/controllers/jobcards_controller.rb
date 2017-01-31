@@ -16,6 +16,15 @@ end
 
   def show
     @jobcard=Jobcard.find(params[:id])
+    
+  respond_to do |format|
+      format.html
+     format.pdf do
+        render pdf: "file_name", template: 'jobcards/show.html.erb'  # Excluding ".pdf" extension.
+      end
+    end  
+    
+    
   end
   
 

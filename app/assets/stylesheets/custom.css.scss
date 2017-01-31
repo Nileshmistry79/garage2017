@@ -3,10 +3,19 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+.alert-notice{
+  background-color:#00FFee;
+  
+}
+
+.myaddress{
+  margin-top:0px;
+  padding-top:0px;
+}
 
 .myborder{
-  border: 0px solid black;
-  margin-left:10px;
+  border: 1px solid black;
+  margin-left:0px;
 }
 
 .myborder1{
