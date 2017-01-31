@@ -61,5 +61,6 @@ end
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'wkhtmltopdf-heroku', '~> 2.12', '>= 2.12.3.0'
 end
 
