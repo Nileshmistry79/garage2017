@@ -4,7 +4,7 @@ if ["development"].include?(Rails.env)
     config.wkhtmltopdf = 'C:/wkhtmltopdf/wkhtmltopdf.exe'
   else
     #if your site is hosted on heroku or any other hosting server which is 64bit
-    config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf-amd64').to_s
+    #config.wkhtmltopdf = Rails.root.join('bin', 'wkhtmltopdf-amd64').to_s
   end
  
   config.default_options = {
